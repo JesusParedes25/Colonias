@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seleccionar Colonia</title>
+</head>
+<body>
+    <h1>Selecciona una Colonia:</h1>
+    <form method="POST" action="/grafico">
+        <input type="hidden" name="municipio" value="{{ municipio }}">
+        <select name="colonia">
+            {% for colonia in colonias %}
+                <option value="{{ colonia }}">{{ colonia }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Ver Gráfico">
+    </form>
+</body>
+</html>

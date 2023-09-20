@@ -4,10 +4,19 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import matplotlib.pyplot as plt
+import gdown
+# Cargar los archivos CSV en DataFrames
+# URLs de los archivos CSV en Google Drive
+url_colonias = "https://drive.google.com/uc?id=17YNIyLvX0Qgje8wL9NVgNzRPgJLqD5lK"
+url_llamadas = "https://drive.google.com/uc?id=1Y7kwkgkdoAFSnNEugHxCAAiu2qxBI_4v"
+
+# Descargar los archivos CSV desde Google Drive
+gdown.download(url_colonias, "colonias_sigeh.csv", quiet=False)
+gdown.download(url_llamadas, "llamadas_por_colonia.csv", quiet=False)
 
 # Cargar los archivos CSV en DataFrames
-df_colonias = pd.read_csv('colonias_sigeh.csv')
-
+df_colonias = pd.read_csv("colonias_sigeh.csv")
+llamadas_por_colonia_df = pd.read_csv("llamadas_por_colonia.csv")
 # ... (Código para procesar los datos y crear los widgets)
 
 # Crear la aplicación Dash

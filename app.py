@@ -68,6 +68,3 @@ def mostrar_grafico(colonia, municipio):
         }
     }
     return fig
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
